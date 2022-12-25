@@ -1,0 +1,79 @@
+{% extends 'back/extended.html' %}
+
+{% block content%}
+<div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div id="tables">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table tablesorter " id="">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nama</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Is Staff</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for l in user_list %}  
+                    <tr>
+                      <th scope="row">{{forloop.counter}}</th>
+                      <td>{{ l.username }}</td>
+                      <td>{{ l.email }}</td>
+                      <td>{{ l.is_staff }}</td>
+                      <td class="text-right">
+                        <a class="btn btn-sm btn-info" href="">lihat</a>
+                        <a class="btn btn-sm btn-warning" href="">edit</a>
+                        <a class="btn btn-sm btn-danger" href="">delete</a>
+                      
+                    </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <ul class="pagination pagination-primary justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="javascript:;" aria-label="Previous">
+                <span aria-hidden="true"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="javascript:;">1</a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="javascript:;">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="javascript:;">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="javascript:;" aria-label="Next">
+                <span aria-hidden="true"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  <footer class="footer footer-black  footer-white ">
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="footer-nav">
+        </nav>
+        <div class="credits ml-auto">
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</div>
+{% endblock content%}

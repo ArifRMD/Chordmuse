@@ -1,0 +1,55 @@
+{% extends 'front/index.html'%}
+{% block content%}
+  <div class="squares square1"></div>
+  <div class="squares square2"></div>
+  <div class="squares square3"></div>
+  <div class="squares square4"></div>
+  <div class="squares square5"></div>
+  <div class="squares square6"></div>
+  <div class="page-header">
+    <div class="page-header-image"></div>
+    <div class="container">
+      <div class="col-lg-5 col-md-8 mx-auto">
+        <div class="card card-login">
+          <form class="form" method="POST" >
+            {% csrf_token %}
+            <div class="card-header">
+              <h4 class="card-title">Login</h4>
+            </div>
+            <div class="card-body">
+              <div class="input-group input-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="tim-icons icon-single-02"></i></span>
+                </div>
+                <input name="username"type="text" class="form-control" placeholder="Username">
+              </div>
+              <div class="input-group input-lg">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="tim-icons icon-caps-small"></i></span>
+                </div>
+                <input name="password"type="text" class="form-control" placeholder="Password">
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <button class="btn btn-primary btn-round btn-lg btn-block">LOGIN</button>
+            </div>
+            <div class="pull-left ml-3 mb-3">
+              <h6>
+                <a href="{% url 'create'%}" class="link footer-link">Create Account</a>
+              </h6>
+            </div>
+            <div class="pull-right mr-3 mb-3">
+              <h6>
+                <a href="#pablo" class="link footer-link">forget Password</a>
+              </h6>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content%}
+</body>
+
+</html>
+a

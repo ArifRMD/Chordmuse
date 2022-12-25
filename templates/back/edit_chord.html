@@ -1,0 +1,63 @@
+{% extends 'back/extended.html'%}
+
+{% block content%}
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+            <form class="form-horizontal" method="POST">
+              {% csrf_token%}
+              <div class="card-header">
+                <h4 class="card-title">
+                  {{title}}
+                </h4>
+              </div>
+              <div class="card-content">
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Nama Lagu</label>
+                  <div class="col-md-9">
+                    <input name="songname" type="text" placeholder="Nama Lagu" class="form-control" value="{{chord.songname}}">
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">date</label>
+                    <div class="col-md-9">
+                      <input name="date" type="text" placeholder="Tahun Rilis" class="form-control" value="{{chord.date}}">
+                    </div>
+                  </div>
+                <div class="card-content">
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">body</label>
+                    <div class="col-md-9">
+                      <textarea name="body" id="" cols="30" class="form-control">{{chord.body}}</textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text right">
+                  <div class="form-group">
+                    <label class="col-md-3"></label>
+                    <div class="col-md-9">
+                      <button type="submit" class="btn btn-fill btn-danger">
+                        submit
+                      </button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+      <footer class="footer footer-black  footer-white ">
+        <div class="container-fluid">
+          <div class="row">
+            <nav class="footer-nav">
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+{% endblock content %}
+</body>
+
+</html>

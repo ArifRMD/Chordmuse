@@ -1,0 +1,45 @@
+{% extends 'front/index.html'%}
+
+{% block content%}
+<div class="main">
+    <div class="section section-tabs">
+         <div class="content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div id="tables">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table tablesorter " id="">
+                        <thead>
+                          <tr>
+                            <th scope="col">NO</th>
+                            <th scope="col">SongName</th>
+                            <th scope="col">Kategori</th>
+                            <th scope="col">Tahun Rilis</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for p in chord %}  
+                          <tr>
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td>{{ p.songname }}</td>
+                            <td>{{ p.kategori }}</td>
+                            <td>{{ p.date }}</td>
+                            <td class="text">
+                              <a class="btn btn-sm btn-info" href="{% url 'Detail_chord' p.id%}">lihat</a>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+{% endblock content %}
